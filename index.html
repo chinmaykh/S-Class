@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Class</title>
+
+    <!-- Superpowered by AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- MaterializeCSS -->
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1 class="center">Marks needed for S Class</h1>
+        </div>
+        <div class="divider"></div>
+        <div class="section" ng-show="course_type">
+            <h2 ng-show="cie_marks">{{(91 - cie_marks)*course_type}}</h2>
+        </div>
+        <div class="divider"></div>
+        
+        <form class="row">
+            <!-- Dropdown -->
+            <select name="course_type" id="course_type" title="Course Title" ng-model="course_type" class="browser-default">
+                <option value="" disabled>Choose Course Type</option>
+                <option value="1" ng-selected="true" id="opt1">Lab / DT</option>
+                <option value="2">Other Subjects</option>
+            </select>
+            <input type="number" id="cie_marks" value="20" ng-model="cie_marks" max="50" title="CIE Marks">
+            <label for="cie_marks">CIE Marks</label>
+        </form>
+    </div>
+</body>
+</html>
